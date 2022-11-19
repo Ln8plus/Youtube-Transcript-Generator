@@ -6,8 +6,7 @@ import requests
 
 
 #Step 1 : Uploading file at endpoint url and getting it's generated url.
-
-files = next(os.walk('Audio Fetcher'), (None, None, []))[2]
+files = next(os.walk('./'), (None, None, []))[2]
 for file in files:
     if file.endswith('.mp3') or file.endswith('.m4a'):
         audio_file_name = file
@@ -48,7 +47,6 @@ j = {'audio_url':audio_url, "summarization": True,
 #transcript_endpoint = 'https://api.assemblyai.com/v2/transcript'
 transcript_endpoint = "https://api.assemblyai.com/v2/transcript"
 response = requests.post(transcript_endpoint, headers = headers, json = j)
-#print('id' in response.json())
 
 
 
@@ -81,17 +79,12 @@ while status != 'completed':
     if status == 'completed':
         transcript = response_result.json()['text']
         summary = response_result.json()['summary']
-        '''
-        with open(os.path.join(sys.path[0], 'entities.json'), 'w') as f:
-            json_object = json.dumps(response_result.json()['entities'], indent=4)
-            f.write(json_object)
-
-        with open(os.path.join(sys.path[0], 'iab_categories_result.json'), 'w') as f:
-            json_object = json.dumps(response_result.json()['iab_categories_result'], indent=4)
-            f.write(json_object)
-        '''
-        with open(os.path.join(sys.path[0], 'summary.txt'), 'w') as f:
+        
+        #Saving the summary and transcript files.
+        summary_name = audio_file_name[:audio_file_name.index('.')] + " Summary.txt"
+        with open(os.path.join(sys.path[0], summary_name), 'w') as f:
             f.write(summary)
-            
-        with open(os.path.join(sys.path[0], 'transcript.txt'), 'w') as f:
+
+        transcript_name = audio_file_name[:audio_file_name.index('.')] + " Transcript.txt"    
+        with open(os.path.join(sys.path[0], transcript_name), 'w') as f:
             f.write(transcript)
