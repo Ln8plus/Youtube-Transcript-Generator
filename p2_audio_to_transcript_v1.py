@@ -10,7 +10,7 @@ files = next(os.walk('./'), (None, None, []))[2]
 for file in files:
     if file.endswith('.mp3') or file.endswith('.m4a'):
         audio_file_name = file
-print(audio_file_name)
+
 
 
 upload_endpoint = 'https://api.assemblyai.com/v2/upload'
@@ -45,7 +45,6 @@ j = {'audio_url':audio_url, "summarization": True,
 
 
 #Step 2 : Fetching the transcript id from the api's response.
-#transcript_endpoint = 'https://api.assemblyai.com/v2/transcript'
 transcript_endpoint = "https://api.assemblyai.com/v2/transcript"
 response = requests.post(transcript_endpoint, headers = headers, json = j)
 
@@ -63,7 +62,7 @@ transcript_id = '/' + response.json()['id']
 
 #Step 3 Fetching our transcript as a text file:
 polling_endpoint = ''.join([transcript_endpoint, transcript_id])
-print(polling_endpoint)
+
 
 status = ''
 while status != 'completed':
@@ -83,10 +82,11 @@ while status != 'completed':
         summary = response_result.json()['summary']
         
         #Saving the summary and transcript files.
-        summary_name = audio_file_name[:audio_file_name.index('.')] + " Summary.txt"
+        #name = audio_file_name[:audio_file_name.index('.')]
+        summary_name = "Summary.txt"
         with open(os.path.join(sys.path[0], summary_name), 'w') as f:
             f.write(summary)
 
-        transcript_name = audio_file_name[:audio_file_name.index('.')] + " Transcript.txt"    
+        transcript_name = "Transcript.txt"    
         with open(os.path.join(sys.path[0], transcript_name), 'w') as f:
             f.write(transcript)
