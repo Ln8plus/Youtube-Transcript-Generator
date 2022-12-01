@@ -3,14 +3,27 @@ api_key.txt
 
 
 #venv
+venv
 audio_transcriber_venv
 
+#pycache
+__pycache__
 
 #Requirement & Test files
+requirements.txt
 rq.txt
 test.py
+replit
 
 
 #Audio files
 *mp3
 *m4a
+
+
+#Miscellaneous
+*replit
+* Trancscript.txt
+* Summary.txt
+poetry.lock
+pyproject.toml
