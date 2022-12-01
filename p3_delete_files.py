@@ -1,14 +1,7 @@
 import os, sys
 transcript = 'transcript.txt'
 summary = 'summary.txt'
-'''
-#Checking if the files to be deleted exist in the directory.
-try:    
-    if not(os.path.exists(transcript)) and not(os.path.exists(summary)) :
-        exit()
-except OSError as e:
-    print ("Error: %s - %s." % (e.filename, e.strerror))
-'''
+
 
 
 files = next(os.walk(sys.path[0]), (None, None, []))[2]

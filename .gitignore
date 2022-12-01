@@ -1,4 +1,16 @@
+#Auth
 api_key.txt
+
+
+#venv
 audio_transcriber_venv
+
+
+#Requirement & Test files
 rq.txt
 test.py
+
+
+#Audio files
+*mp3
+*m4a

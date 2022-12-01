@@ -39,6 +39,7 @@ audio_url = response.json()['upload_url']
 
 
 j = {'audio_url':audio_url, "summarization": True,
+    "summary_model": "informative",
     "summary_type": "bullets_verbose"}
 
 
@@ -55,11 +56,12 @@ with open(os.path.join(sys.path[0], 'post_response.json'), 'w') as f:
     f.write(json_object)
 
 transcript_id = '/' + response.json()['id']
-print(transcript_id)
+
+
+
+
+
 #Step 3 Fetching our transcript as a text file:
-# Fixed the polling endpoint not working as it was using os.path.join which was malfunctioning and only 
-# returning the transcript id not the transcript endpoint before it. 
-# used regular string join instead which gives us the proper url.
 polling_endpoint = ''.join([transcript_endpoint, transcript_id])
 print(polling_endpoint)
 
