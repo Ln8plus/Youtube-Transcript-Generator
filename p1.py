@@ -14,3 +14,4 @@ opts = {
 with YoutubeDL(opts) as ydl:
     ydl.download([url])
     print('Audio file has finished downloading.')
+    print('Now transcribing...')

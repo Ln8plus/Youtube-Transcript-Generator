@@ -1,6 +1,8 @@
 #Auth
 api_key.txt
 
+#JSON
+post_response.json
 
 #venv
 venv
@@ -20,6 +22,7 @@ replit
 
 
 #Miscellaneous
+main.py
 *replit
 *nix
 * Transcript.txt

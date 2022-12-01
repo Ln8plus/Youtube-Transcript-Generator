@@ -1,6 +1,6 @@
 import os, sys
-transcript = 'transcript.txt'
-summary = 'summary.txt'
+transcript = 'Transcript.txt'
+summary = 'Summary.txt'
 
 
 
