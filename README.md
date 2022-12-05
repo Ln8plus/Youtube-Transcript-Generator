@@ -10,16 +10,17 @@
 
 
 # How to use ?
+- You'll need to make an account over at assemblyai's site and get yourself an api key.
+- Store the api key in a file called "api_key.txt" in the project's root folder.
 - Run main.py after installing relevant dependencies.
-- Or you can also individually run files.
+- Or you can also run the files one by one. [AudioDownloder > TranscriptGenerator > FileDeleter]
 - Use python -m <file_name> to run the scripts on a terminal. 
-- Run them sequentially to get proper outputs. p1 > p2 > p3
-- eg. "python -m p1" or "python3 -m p1".
+- eg. "python -m AudioDownloder" or "python3 -m AudioDownloder".
 
-- p1 takes the video's url and fetches the corresponding audio file.
+- AudioDownloader takes the video's url and fetches the corresponding audio file.
 
-- p2 uploads the audio file to AssemblyAI's servers.
-- It gets the transcript & audio files.
+- TranscriptGenerator uploads the audio file to AssemblyAI's servers.
+- It gets the transcript & summary files.
 
-- p3 deletes the current audio, transcript & summary files.
+- FileDeleter deletes the current audio, transcript & summary files.
 - The working directory needs to be clear of those files for the next iteration.

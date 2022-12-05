@@ -5,7 +5,7 @@ import json
 import requests
 
 
-#Step 1 : Uploading file at endpoint url and getting it's generated url.
+#Uploading file at endpoint url and getting it's generated url.
 def FileHandler():
     files = next(os.walk('./'), (None, None, []))[2]
     for file in files:
@@ -31,7 +31,7 @@ def FileHandler():
                 yield data
 
 
-    #Step 2 : Fetching the transcript id from the api's response.
+    #Fetching the transcript id from the api's response.
     headers = {'authorization':api_key, 
                 'content-type':'application/json'}
     response = requests.post(upload_endpoint, headers = headers, data = read_file(audio_file_name))
@@ -57,15 +57,15 @@ def FileHandler():
 
 
 
-    #Step 3 Fetching our transcript as a text file:
+    #Fetching our transcript as a text file:
 
-    polling_endpoint = ''.join([transcript_endpoint, transcript_id])
+    endpoint = ''.join([transcript_endpoint, transcript_id])
 
 
     status = ''
     while status != 'completed':
 
-        response_result = requests.get(polling_endpoint, headers = headers)
+        response_result = requests.get(endpoint, headers = headers)
         status = response_result.json()['status']
         print(f'Status: {status}')
 
