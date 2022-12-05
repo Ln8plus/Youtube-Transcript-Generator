@@ -1,6 +1,7 @@
 from yt_dlp import YoutubeDL
 
 def AudioFetcher():
+    #Converting youtu.be urls to regular convention.
     url = input('Enter the url of the video: ')
     if 'watch?v=' not in url:
         url = 'https://youtube.com/watch?v=' + url[17:]

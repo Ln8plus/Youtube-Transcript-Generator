@@ -11,21 +11,19 @@ def FileDeleter():
 
 
 
-    #Deleting the transcript.
+    #Deleting the transcript, summary and audio files.
     try:
         path = os.path.join(sys.path[0], transcript)
         os.remove(path)
     except OSError as e:
         print ("Error: %s - %s." % (e.filename, e.strerror))
 
-    #Deleting the summary.
     try:
         path = os.path.join(sys.path[0], summary)
         os.remove(path)
     except OSError as e:
         print ("Error: %s - %s." % (e.filename, e.strerror))
 
-    #Deleting the audio file.
     try:
         path = os.path.join(sys.path[0], audio_file_name)
         os.remove(path)

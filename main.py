@@ -1,6 +1,6 @@
-from p1 import AudioFetcher
-from p2 import FileHandler
-from p3 import FileDeleter
+from AudioDownloader import AudioFetcher
+from TranscriptGenerator import FileHandler
+from FileDeleter import FileDeleter
 import subprocess as sb
 
 def App():
