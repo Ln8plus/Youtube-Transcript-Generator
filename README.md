@@ -27,10 +27,5 @@
 
 
 ####
-![image](https://drive.google.com/uc?export=view&id=1eGxA5NddU7hF5DN-xeP7qY69R84X9xQt)
 
-
-![image](https://drive.google.com/uc?export=view&id=1_zgF5E5hKvdEGKJ0bWJ8MTwriWdKtNP1)
-
-
-![image](https://drive.google.com/uc?export=view&id=1gd_fz_KlA5eHEC6pe8n_7_GmSyFr2sgN)
+![image](https://drive.google.com/uc?export=view&id=1PaEBO5KtX_aVjALsDA8_ATO82KLTXvYK)
